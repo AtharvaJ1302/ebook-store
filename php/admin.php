@@ -91,7 +91,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_id'])) {
                             <td>
                                 <img width="100" src="../uploads/cover/<?= $book['cover'] ?>"> <br>
                                 <a href="../uploads/files/<?= $book['file'] ?>" class="link-dark d-block text-center" style="text-decoration: underline !important;">
-                                    <?= $book['title'] ?>
+                                    <?= $book['title'] ?> 
                                 </a>
                             </td>
                             <td>
