@@ -21,8 +21,9 @@
 }
 
 .about .about_tag p{
-    line-height: 22px;
+    line-height: 30px;
     width: 650px;
     text-align: justify;
     margin-bottom: 15px;
+    font-size: 20px;
 }
