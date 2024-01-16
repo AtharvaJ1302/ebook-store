@@ -20,7 +20,7 @@
                 <a href="index.php">Home</a>
                 <a href="#books">Books</a>
                 <a href="about.php">About</a>
-                <a href="#suggestion">Suggestion</a>
+                <a href="suggestion.php">Suggestion</a>
 
             </nav>
 
