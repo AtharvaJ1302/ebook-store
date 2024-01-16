@@ -21,7 +21,7 @@
              <h1>Login</h1>
 
             <?php
-            if (isset($_GET['error'])) {
+            if (isset($_GET['error'])) {   //if the required field is filled or not
             ?>
 
                 <div class="alert alert-danger" role="alert">

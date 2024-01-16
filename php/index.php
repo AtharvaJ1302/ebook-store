@@ -19,8 +19,8 @@
             <nav class="navbar">
                 <a href="index.php">Home</a>
                 <a href="#books">Books</a>
-                <a href="#about">About</a>
-                <a href="#support">Support</a>
+                <a href="about.php">About</a>
+                <a href="#suggestion">Suggestion</a>
 
             </nav>
 
@@ -91,7 +91,7 @@
     </div>
 
     <div class="credit">
-        Created by <span>Atharva Joshi</span> | All rights reserved!
+        Created by <span>Janhavi Dehadray</span> | All rights reserved!
     </div>
 </section>
 
