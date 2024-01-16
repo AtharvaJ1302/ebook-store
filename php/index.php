@@ -18,9 +18,10 @@
             <a href="" class="logo"><img src="../images/logo.png" alt="" width="100px" height="70px"></a>
             <nav class="navbar">
                 <a href="index.php">Home</a>
-                <a href="#books">Books</a>
+                <a href="books.php">Books</a>
                 <a href="about.php">About</a>
                 <a href="suggestion.php">Suggestion</a>
+
 
             </nav>
 
