@@ -45,8 +45,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_id'])) {
             <div class="header1">
                 <a href="admin.php" class="logo"><img src="../images/logo.png" alt="" width="100px" height="70px"></a>
                 <nav class="navbar">
-                    <a href="index.php">Add book</a>
-                    <a href="#books">Add category</a>
+                    <a href="add-book.php">Add book</a>
+                    <a href="add-category.php">Add category</a>
                     <a href="add-author.php">Add author</a>
                     <a href="logout.php">Logout</a>
 
