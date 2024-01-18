@@ -1,0 +1,21 @@
+.featured__card{
+    position: relative;
+    text-align: center;
+    background-color: var(--container-color);
+    padding: 2rem;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    transition: border .4s,backgrund-color .4s;
+
+}
+.featured__img{
+    width: 75px;
+    margin: 0 auto .75rem;
+}
+.featured__title{
+    font-size: var(--h2-font-size);
+    margin-bottom: .5rem;
+}
+.featured__card .button{
+    cursor: pointer;
+}

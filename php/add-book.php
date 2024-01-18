@@ -33,15 +33,17 @@
             </div>
         </header>
         <form action="" 
-           method=""
-           class="shadow p-4 rounded mt-5"           style="width: 90%; max-width: 50rem;" > 
+           method="" 
+           enctype="multipart/form-data"  
+           class="shadow p-4 rounded mt-5" 
+           style="width: 90%; max-width: 50rem;"> 
  
       <h1 class="text-center pb-5 display-4 fs-3"> 
-       Add New Category 
+       Add New Book 
       </h1> 
        
           <div class="alert alert-danger" role="alert"> 
-    
+     
     </div> 
    
           <div class="alert alert-success" role="alert"> 
@@ -49,16 +51,90 @@
     </div> 
       <div class="mb-3"> 
       <label class="form-label"> 
-              Category Name 
+             Book Title 
+             </label> 
+      <input type="text"  
+             class="form-control" 
+             value=""  
+             name="book_title"> 
+  </div> 
+ 
+  <div class="mb-3"> 
+      <label class="form-label"> 
+             Book Description 
              </label> 
       <input type="text"  
              class="form-control"  
-             name="category_name"> 
+             value="" 
+             name="book_description"> 
+  </div> 
+ 
+  <div class="mb-3"> 
+      <label class="form-label"> 
+             Book Author 
+             </label> 
+      <select name="book_author" 
+              class="form-control"> 
+           <option value="0"> 
+            Select author 
+           </option> 
+        
+            <option  
+              selected 
+              value=""> 
+             
+               </option> 
+               
+      <option  
+       value=""> 
+      </option> 
+        
+      </select> 
+  </div> 
+ 
+  <div class="mb-3"> 
+      <label class="form-label"> 
+             Book Category 
+             </label> 
+      <select name="book_category" 
+              class="form-control"> 
+           <option value="0"> 
+            Select category 
+           </option> 
+           
+            <option  
+              selected 
+              value=""> 
+               </option> 
+      <option  
+       value=""> 
+        
+      </option> 
+  
+      </select> 
+  </div> 
+ 
+  <div class="mb-3"> 
+      <label class="form-label"> 
+             Book Cover 
+             </label> 
+      <input type="file"  
+             class="form-control"  
+             name="book_cover"> 
+  </div> 
+ 
+  <div class="mb-3"> 
+      <label class="form-label"> 
+             File 
+             </label> 
+      <input type="file"  
+             class="form-control"  
+             name="file"> 
   </div> 
  
      <button type="submit"  
              class="btn btn-primary"> 
-             Add Category</button> 
+             Add Book</button> 
      </form>
     
 </body>
