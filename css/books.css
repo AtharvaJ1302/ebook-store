@@ -9,7 +9,9 @@
 
 }
 .featured__img{
-    width: 75px;
+    position: left;
+    width: 100px;
+    height: 100px;
     margin: 0 auto .75rem;
 }
 .featured__title{
@@ -18,4 +20,5 @@
 }
 .featured__card .button{
     cursor: pointer;
+    position: center;
 }
