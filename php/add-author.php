@@ -32,21 +32,12 @@
                 </div>
             </div>
         </header>
-        <form action="" 
-           method="" 
-           class="shadow p-4 rounded mt-5"           style="width: 90%; max-width: 50rem;" 
-           > 
+        <form action="" method="" class="shadow p-4 rounded mt-5" style="width: 90%; max-width: 50rem; margin-left:30%" > 
  
       <h1 class="text-center pb-5 display-4 fs-3"> 
        Add New Author 
       </h1> 
        
-          <div class="alert alert-danger" role="alert"> 
-    
-    </div> 
-   
-          <div class="alert alert-success" role="alert"> 
-    
     </div> 
    
       <div class="mb-3"> 
