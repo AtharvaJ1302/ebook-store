@@ -1,31 +1,31 @@
- <?php
+<?php
 session_start();
 
 include "./db_connection.php";
 
 if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
 
-    // check if author name is filled
-    if (isset($_POST['author_name'])) {
+    // check if category name is filled
+    if (isset($_POST['category_name'])) {
 
-        $name = $_POST['author_name'];
+        $name = $_POST['category_name'];
 
         if (empty($name)) {
-            $em = "The author name is required";
-            header("Location: ../php/add-author.php?error=$em");
+            $em = "The category name is required";
+            header("Location: ../php/add-category.php?error=$em");
             exit;
         }else{
-            $sql = "INSERT INTO author (name) VALUES (?)";
+            $sql = "INSERT INTO categories (name) VALUES (?)";
             $stmt = $conn -> prepare($sql);
             $res = $stmt -> execute([$name]);
 
             if($res){
-                $sm = "Author added successfully!!";
-            header("Location: ../php/add-author.php?success=$sm");
+                $sm = "Category added successfully!!";
+            header("Location: ../php/add-category.php?success=$sm");
             exit;
             }else{
                 $em = "Some error occured!!";
-            header("Location: ../php/add-author.php?error=$em");
+            header("Location: ../php/add-category.php?error=$em");
             exit;
             }
         }

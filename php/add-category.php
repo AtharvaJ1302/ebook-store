@@ -21,7 +21,7 @@
                 <a href="admin.php" class="logo"><img src="../images/logo.png" alt="" width="100px" height="70px"></a>
                 <nav class="navbar">
                     <a href="">Add book</a>
-                    <a href="">Add category</a>
+                    <a href="add-category.php">Add category</a>
                     <a href="">Add author</a>
                     <a href="logout.php">Logout</a>
 
@@ -32,21 +32,36 @@
                 </div>
             </div>
         </header>
-        <form action="" 
-           method=""
-           class="shadow p-4 rounded mt-5"           style="width: 90%; max-width: 50rem;" > 
+        <form action="../connection/add-category.php" method="post" class="shadow p-4 rounded mt-5" style="width: 90%; max-width: 50rem;margin-left:30%" > 
  
       <h1 class="text-center pb-5 display-4 fs-3"> 
        Add New Category 
       </h1> 
        
-          <div class="alert alert-danger" role="alert"> 
-    
-    </div> 
-   
-          <div class="alert alert-success" role="alert"> 
-    
-    </div> 
+      <?php
+            if (isset($_GET['error'])) {   //if the required field is filled or not
+            ?>
+
+                <div class="alert alert-danger" role="alert">
+                    <?= htmlspecialchars($_GET['error']); ?>
+                </div>
+
+            <?php
+            }
+            ?>
+
+            <?php
+            if (isset($_GET['success'])) {   //if the required field is filled or not
+            ?>
+
+                <div class="alert alert-success" role="alert">
+                    <?= htmlspecialchars($_GET['success']); ?>
+                </div>
+
+            <?php
+            }
+            ?>
+         
       <div class="mb-3"> 
       <label class="form-label"> 
               Category Name 

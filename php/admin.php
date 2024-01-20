@@ -3,7 +3,7 @@
 session_start();
 
 //start session if admin is logged in
-if (isset($_SESSION['user_id']) && isset($_SESSION['user_id'])) {
+if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
 
     include "../connection/db_connection.php";
 

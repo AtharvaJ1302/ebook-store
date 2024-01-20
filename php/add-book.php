@@ -1,3 +1,25 @@
+<?php
+
+session_start();
+
+//start session if admin is logged in
+if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
+
+    include "../connection/db_connection.php";
+
+    include "../connection/author.php";
+    $authors = get_all_author($conn);
+
+    include "../connection/book.php";
+    $books = get_all_books($conn);
+
+    include "../connection/category.php";
+    $categories = get_all_categories($conn);
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,11 +54,11 @@
                 </div>
             </div>
         </header>
-        <form action="" 
-           method="" 
+        <form action="connection/add-book.php" 
+           method="post" 
            enctype="multipart/form-data"  
            class="shadow p-4 rounded mt-5" 
-           style="width: 90%; max-width: 50rem;"> 
+           style="width: 90%; max-width: 50rem;margin-left:30%"> 
  
       <h1 class="text-center pb-5 display-4 fs-3"> 
        Add New Book 
@@ -78,16 +100,16 @@
            <option value="0"> 
             Select author 
            </option> 
-        
-            <option  
-              selected 
-              value=""> 
-             
-               </option> 
-               
-      <option  
-       value=""> 
-      </option> 
+           <?php
+           if ($authors == 0) {
+            
+           }else{
+            foreach ($authors as $author) {
+            ?>
+            <option value="<?=$author ['id'] ?>"> 
+            <?=$author ['name'] ?>
+           </option>
+             <?php }} ?>
         
       </select> 
   </div> 
@@ -101,16 +123,16 @@
            <option value="0"> 
             Select category 
            </option> 
-           
-            <option  
-              selected 
-              value=""> 
-               </option> 
-      <option  
-       value=""> 
-        
-      </option> 
-  
+           <?php
+           if ($categories == 0) {
+            
+           }else{
+            foreach ($categories as $category) {
+            ?>
+            <option value="<?=$category ['id'] ?>"> 
+            <?=$category ['name'] ?>
+           </option>
+             <?php }} ?>
       </select> 
   </div> 
  
@@ -139,3 +161,9 @@
     
 </body>
 </html>
+<?php
+} else {
+    header("Location: login.php");
+    exit;
+}
+?>
