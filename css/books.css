@@ -15,20 +15,18 @@
     top: 5rem;
 }
 .featured__img{
-<<<<<<< HEAD
     width: 150px;
 
     position: left;
     width: 100px;
     height: 100px;
->>>>>>> 3e2d06dd8a7e7eb22ad00d8b345c63ea7d80bfb2
     margin: 0 auto .75rem;
 }
 .featured__title{
     font-size: var(--h2-font-size);
     margin-bottom: 2.5rem;
 }
-<<<<<<< HEAD
+
 
 .featured__author{
     font-size: var(--h2-font-size);
@@ -42,9 +40,8 @@ width: fit-content !important;
 
 .featured__container .featured__card .btn a{
     color: white;
-=======
+}
 .featured__card .button{
     cursor: pointer;
     position: center;
->>>>>>> 3e2d06dd8a7e7eb22ad00d8b345c63ea7d80bfb2
 }

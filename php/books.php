@@ -51,6 +51,7 @@
 <h4 class="featured__author">By:Demo author</h4>
 </div>
 <button class="btn btn-primary">Download</button>
+<button class="btn btn-primary">view</button>
 </article>
 </div>
 </div>
