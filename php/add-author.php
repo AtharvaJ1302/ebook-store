@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+//start session if admin is logged in
+if (isset($_SESSION['user_id']) && isset($_SESSION['user_id'])) {
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,3 +68,9 @@
 
 </body>
 </html>
+<?php
+} else {
+    header("Location: login.php");
+    exit;
+}
+?>
