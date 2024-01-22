@@ -3,8 +3,24 @@ session_start();
 
 if (isset($_SESSION['user_id']) &&
     isset($_SESSION['user_email'])) {
-?>
+        if(!isset($_GET['id'])){
+            header("Location: admin.php");
+            exit;
+        }
+        $id = $_GET['id'];
 
+        include "../connection/db_connection.php";
+        include "../connection/category.php";
+        $category = get_category($conn,$id);
+
+
+
+        if($category == 0){
+            header("Location: admin.php");
+            exit;
+        }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,10 +55,10 @@ if (isset($_SESSION['user_id']) &&
                 </div>
             </div>
         </header>
-        <form action="../connection/add-category.php" method="post" class="shadow p-4 rounded mt-5" style="width: 90%; max-width: 50rem;margin-left:30%" > 
+        <form action="../connection/edit-category.php" method="post" class="shadow p-4 rounded mt-5" style="width: 90%; max-width: 50rem;margin-left:30%" > 
  
       <h1 class="text-center pb-5 display-4 fs-3"> 
-       Add New Category 
+       Edit Category 
       </h1> 
        
       <?php
@@ -73,14 +89,21 @@ if (isset($_SESSION['user_id']) &&
       <label class="form-label"> 
               Category Name 
              </label> 
+
+      <input type="text"   
+             value="<?=$category['id'] ?>"
+             hidden
+             name="category_id"> 
+
       <input type="text"  
              class="form-control"  
+             value="<?=$category['name'] ?>"
              name="category_name"> 
   </div> 
  
      <button type="submit"  
              class="btn btn-primary"> 
-             Add Category</button> 
+             Update</button> 
      </form>
     
 </body>

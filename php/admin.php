@@ -126,7 +126,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
 
                             </td>
                             <td>
-                                <a href="" class="btn btn-warning">edit</a>
+                                <a href="edit-book.php?id=<?=$book['id']?>" class="btn btn-warning">edit</a>
                                 <a href="" class="btn btn-danger">delete</a>
                             </td>
                         </tr>
@@ -163,7 +163,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                             <td><?=$j?></td>
                             <td><?= $category['name'] ?></td>
                             <td>
-                                <a href="" class="btn btn-warning">edit</a>
+                                <a href="edit-category.php?id=<?=$category['id']?>" class="btn btn-warning">edit</a>
                                 <a href="" class="btn btn-danger">delete</a>
                             </td>
                         </tr>
@@ -199,7 +199,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                             <td><?=$k?></td>
                             <td><?= $author['name'] ?></td>
                             <td>
-                                <a href="" class="btn btn-warning">edit</a>
+                                <a href="edit-author.php?id=<?=$author['id']?>" class="btn btn-warning">edit</a>
                                 <a href="" class="btn btn-danger">delete</a>
                             </td>
                         </tr>
