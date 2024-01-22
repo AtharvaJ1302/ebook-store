@@ -12,12 +12,12 @@ function upload_files($files,$allowed_exs,$path){
         $file_ex_lc = strtolower($file_ex);
 
         if (in_array($file_ex_lc,$allowed_exs)) {
-            $new_file_name = uniqid("",true).'.'.$file_ex_lc;
-            $file_upload_path = '../uploads/'.$path.'/'.$new_file_name;
+            // $new_file_name = uniqid("",true).'.'.$file_ex_lc;
+            $file_upload_path = '../uploads/'.$path.'/'./*$new_file_name*/$file_name;
             move_uploaded_file($tmp_name,$file_upload_path);
 
             $sm['status'] = 'success';
-            $sm['data'] = $new_file_name;
+            $sm['data'] = /*$new_file_name*/$file_name;
             return $sm;
 
         }else{
