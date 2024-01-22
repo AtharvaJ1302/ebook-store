@@ -127,7 +127,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                             </td>
                             <td>
                                 <a href="edit-book.php?id=<?=$book['id']?>" class="btn btn-warning">edit</a>
-                                <a href="" class="btn btn-danger">delete</a>
+                                <a href="../connection/delete-book.php?id=<?=$book['id']?>" class="btn btn-danger">delete</a>
                             </td>
                         </tr>
                     <?php  } ?>
