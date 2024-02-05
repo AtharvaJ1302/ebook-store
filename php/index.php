@@ -43,9 +43,9 @@
         <div class="row">
             <div class="content">
                 <h1>Welcome to <span>"Book Hunt"</span></h1>
-                <h6> It's completely free to read E-Books here</h6>
+                <h6> You can read E-books for free <br> [unless you want premium &#128540]</h6>
 
-                <a href="" class="btn">Explore Books</a>
+                <a href="./books.php" class="btn">Explore Books</a>
             </div>
 
             <div class="books-slider">
@@ -54,7 +54,7 @@
                 <a href="" ><img src="../images/book_3.jpg" alt="" height="285px"></a>
                 <a href="" ><img src="../images/book_4.jpg" alt="" height="285px"></a>
                 <a href="" ><img src="../images/book_5.jpg" alt="" height="285px"></a>
-                <a href="" ><img src="../images/book_6.jpg" alt="" height="285px"></a>
+                <a href="" ><img src="../images/book_9.jpg" alt="" height="285px"></a>
             </div>
         </div>
     </section>
