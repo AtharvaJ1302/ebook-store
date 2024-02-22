@@ -79,38 +79,88 @@ $categories = get_all_categories($conn);
         </div>
     </form>
 
-    <div class="my-5">
+    <!-- <div class="my-5">
         Search result for <b><?= $key ?></b>
-    </div>
+    </div> -->
 
     <div class="d-flex pt-3">
 			<?php if ($books == 0){ ?>
 				<div class="alert alert-warning 
         	            text-center p-5 pdf-list" 
         	     role="alert">
-        	     <img src="../images/empty-search.png" 
+        	     <img src="../images/empty.png" 
         	          width="100">
         	     <br>
-				  The key <b>"<?=$key?>"</b> didn't match to any record
-		           in the database
+				  There is no book in the database
 			  </div>
 			<?php }else{ ?>
 			<div class="pdf-list d-flex flex-wrap">
 				<?php foreach ($books as $book) { ?>
 				<div class="card m-1">
 					<img src="../uploads/cover/<?=$book['cover'] ?>"
-					     class="card-img-top">
+					     class="card-img-top" style="height: 26rem;">
 					<div class="card-body">
 						<h5 class="card-title">
 							<?=$book['title']?>
 						</h5>
-						<p class="card-text"><?=$book['description'] ?></p>
-                        <a href="../uploads/files/The Hunger Games.pdf#toolbar=0" class="btn btn-success">Open</a>
+						<p class="card-text">
+                        <i style="color: red;"><b>By: <?php foreach($authors as $author){ 
+                            if ($author['id'] == $book['author_id']) {
+                                echo $author['name'];
+                                break;
+                            }
+                            ?>
+                        <?php } ?>
+                        <br></b></i>    
+                        <?=$book['description'] ?></p>
+                        <i style="color: red;"><b>Category: <?php foreach($categories as $category){ 
+                            if ($category['id'] == $book['category_id']) {
+                                echo $category['name'];
+                                break;
+                            }
+                            ?>
+                        <?php } ?>
+                        <br></b></i><br>   
+                        <a href="../uploads/files/<?=$book['file'] ?>#toolbar=0" class="btn btn-success">Open</a>
+
+                        
 					</div>
 				</div>
 				<?php } ?>
 			</div>
 		<?php } ?>
+
+        <div class="category">
+			<!-- List of categories -->
+			<div class="list-group">
+				<?php if ($categories == 0){
+					// do nothing
+				}else{ ?>
+				<a href="#"
+				   class="list-group-item list-group-item-action active">Category</a>
+				   <?php foreach ($categories as $category ) {?>
+				  
+				   <a href="category.php?id=<?=$author['id']?>"
+				      class="list-group-item list-group-item-action">
+				      <?=$category['name']?></a>
+				<?php } } ?>
+			</div>
+
+
+            <div class="list-group mt-5">
+				<?php if ($authors == 0){
+					// do nothing
+				}else{ ?>
+				<a href="#"
+				   class="list-group-item list-group-item-action active">Author</a>
+				   <?php foreach ($authors as $author ) {?>
+				  
+				   <a href="author.php?id=<?=$author['id']?>"
+				      class="list-group-item list-group-item-action">
+				      <?=$author['name']?></a>
+				<?php } } ?>
+			</div>
+
 		</div>
 	</div>
 </body>
