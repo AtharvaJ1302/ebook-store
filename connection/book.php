@@ -26,3 +26,19 @@ function get_books($con, $id){
     }
     return $book;
 }
+
+function search_books($con,$key){
+
+    $key = "%{$key}%";
+
+    $sql = "SELECT * FROM books WHERE title LIKE ? OR description LIKE ?";
+    $stmt = $con->prepare($sql);
+    $stmt->execute([$key,$key]);
+
+    if ($stmt->rowCount() > 0) {
+        $books = $stmt->fetchAll();
+    }else{
+        $books = 0;
+    }
+    return $books;
+}

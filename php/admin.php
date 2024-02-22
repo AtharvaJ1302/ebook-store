@@ -49,7 +49,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                     <a href="add-category.php">Add category</a>
                     <a href="add-author.php">Add author</a>
                     <a href="logout.php">Logout</a>
-
                 </nav>
 
                 <div class="icons">
@@ -58,11 +57,31 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
             </div>
         </header>
 
+
+        <div class="mt-5"></div>
+        <?php if (isset($_GET['error'])) { ?>
+          <div class="alert alert-danger" role="alert">
+			  <?=htmlspecialchars($_GET['error']); ?>
+		  </div>
+		<?php } ?>
+		<?php if (isset($_GET['success'])) { ?>
+          <div class="alert alert-success" role="alert">
+			  <?=htmlspecialchars($_GET['success']); ?>
+		  </div>
+		<?php } ?>
+
         <!-- Header section -->
         <?php
         if ($books == 0) {
         ?>
-            empty
+            <div class="alert alert-warning 
+        	            text-center p-5" 
+        	     role="alert">
+        	     <img src="../images/empty.png" 
+        	          width="100">
+        	     <br>
+			  There is no book in the database
+		  </div>
         <?php
         } else {
         ?>
@@ -140,7 +159,14 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
         <?php
         if ($categories == 0) {
         ?>
-            empty
+           <div class="alert alert-warning 
+        	            text-center p-5" 
+        	     role="alert">
+        	     <img src="../images/empty.png" 
+        	          width="100">
+        	     <br>
+			  There is no category in the database
+		    </div>
         <?php
         } else {
         ?>
@@ -164,7 +190,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                             <td><?= $category['name'] ?></td>
                             <td>
                                 <a href="edit-category.php?id=<?=$category['id']?>" class="btn btn-warning">edit</a>
-                                <a href="" class="btn btn-danger">delete</a>
+                                <a href="../connection/delete-category.php?id=<?=$category['id']?>" class="btn btn-danger">delete</a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -176,7 +202,14 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
         <?php
         if ($authors == 0) {
         ?>
-            empty
+           <div class="alert alert-warning 
+        	            text-center p-5" 
+        	     role="alert">
+        	     <img src="../images/empty.png" 
+        	          width="100">
+        	     <br>
+			  There is no author in the database
+		    </div>
         <?php
         } else {
         ?>
@@ -200,7 +233,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
                             <td><?= $author['name'] ?></td>
                             <td>
                                 <a href="edit-author.php?id=<?=$author['id']?>" class="btn btn-warning">edit</a>
-                                <a href="" class="btn btn-danger">delete</a>
+                                <a href="../connection/delete-author.php?id=<?=$author['id']?>" class="btn btn-danger">delete</a>
                             </td>
                         </tr>
                     <?php } ?>
