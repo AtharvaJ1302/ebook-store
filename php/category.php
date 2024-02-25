@@ -1,8 +1,18 @@
 <?php
 session_start();
 
+
+
+if(!isset($_GET['id'])){
+    header("Location: books.php");
+    exit;
+}
+
+$id = $_GET['id'];
+
+
 // $key = $_GET['key'];
-$key = isset($_GET['key']) ? $_GET['key'] : '';
+// $key = isset($_GET['key']) ? $_GET['key'] : '';
 
 
 include "../connection/db_connection.php";
@@ -10,11 +20,15 @@ include "../connection/db_connection.php";
 include "../connection/author.php";
 $authors = get_all_author($conn);
 
+// include "../connection/book.php";
+// $books = search_books($conn,$id);
+
 include "../connection/book.php";
-$books = search_books($conn,$key);
+$books = get_books_by_category($conn, $id);
 
 include "../connection/category.php";
 $categories = get_all_categories($conn);
+$current_category = get_category($conn,$id);
 
 
 ?>
@@ -66,18 +80,13 @@ $categories = get_all_categories($conn);
     </header>
 
     <!-- Header section -->
-    <form action="books.php" method="get" style="width: 100%; max-width: 30rem">
-
-        <div class="input-group my-5">
-            <input type="text" class="form-control" name="key" placeholder="Search Book..." aria-label="Search Book..." aria-describedby="basic-addon2">
-
-            <button class="input-group-text
-		                 btn btn-primary" id="basic-addon2">
-                <img src="../images/search.png" width="20">
-
-            </button>
-        </div>
-    </form>
+   
+    <h1 class="display-4 p-3 fs-3">
+        <a href="./books.php">
+            <img src="../images/back-arrow.PNG" alt="" width="35px">
+        </a>
+        <?=$current_category['name'] ?>
+    </h1>
 
     <div class="d-flex pt-3">
 			<?php if ($books == 0){ ?>
