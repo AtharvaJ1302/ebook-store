@@ -67,8 +67,12 @@ $categories = get_all_categories($conn);
 
     <!-- Header section -->
     <form action="books.php" method="get" style="width: 100%; max-width: 30rem">
-
         <div class="input-group my-5">
+        <h1 class="display-4 p-2 fs-3">
+        <a href="./books.php">
+            <img src="../images/back-arrow.PNG" alt="" width="35px">
+        </a>
+    </h1>
             <input type="text" class="form-control" name="key" placeholder="Search Book..." aria-label="Search Book..." aria-describedby="basic-addon2">
 
             <button class="input-group-text
